@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  public usuario : any = {}
+
   constructor() {}
+
+  vaiFormulario(){
+    console.log(this.usuario)
+  }
 
 }
