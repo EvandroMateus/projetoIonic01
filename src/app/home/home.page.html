@@ -9,21 +9,26 @@
 <ion-content [fullscreen]="true">
 <form (ngSubmit)="vaiFormulario()">
     <ion-item>
-      <ion-label position="floating">Nome</ion-label>
-      <ion-input [(ngModel)]="usuario.nome" type="text" name="nome"></ion-input>
+      <ion-label position="floating">Número 1</ion-label>
+      <ion-input [(ngModel)]="numero1" type="number" name="numero1"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input [(ngModel)]="usuario.email" type="email" name="email"></ion-input>
+      <ion-label position="floating">Número 2</ion-label>
+      <ion-input [(ngModel)]="numero2" type="number" name="numero2"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Telefone</ion-label>
-      <ion-input [(ngModel)]="usuario.telefone" type="tel" name="tel"></ion-input>
+      <ion-label>Operação</ion-label>
+      <ion-select placeholder="Selecione a Operação" [(ngModel)]="operacao" name="operacao"> 
+        <ion-select-option value="som">Soma</ion-select-option>
+        <ion-select-option value="sub">Subtração</ion-select-option>
+        <ion-select-option value="mul">Multiplicação</ion-select-option>
+        <ion-select-option value="div">Divisão</ion-select-option>
+      </ion-select>
     </ion-item>
 
-    <ion-button fill="solid" expand="block" size="large" type="submit">Vai Formulário</ion-button>
+    <ion-button fill="solid" expand="block" size="large" type="submit">Calcular</ion-button>
   </form>
 
 </ion-content>

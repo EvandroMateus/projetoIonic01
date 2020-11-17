@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,36 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  public usuario : any = {}
+  public numero1: number
+  public numero2: number
 
-  constructor() {}
+  public operacao: string
+  
 
-  vaiFormulario(){
-    console.log(this.usuario)
+  constructor(public alertController: AlertController) {}
+
+  async vaiFormulario(){
+
+    let result = 0
+
+    if(this.operacao == "som"){
+      result =  this.numero1 + this.numero2
+    }else if(this.operacao == "sub"){
+      result = this.numero1 - this.numero2
+    }else if(this.operacao == "mul"){
+      result = this.numero1 * this.numero2
+    }else{
+      result = this.numero1 / this.numero2
+    }
+
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Resultado:',
+      message: `O resultado da operação é ${result}`,
+      buttons: ['OK']
+    });
+
+    await alert.present()
   }
 
 }
