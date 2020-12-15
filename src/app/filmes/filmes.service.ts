@@ -28,4 +28,17 @@ export class FilmesService {
   pegarTodosFilmes(){
     return this.filmes
   }
+
+  pegarFilmeId(idFilme){
+    let filme = null
+
+    for(let i=0; i < this.filmes.length; i++){
+      if(this.filmes[i].id == idFilme){
+        filme = this.filmes[i]
+        break
+      }
+    }
+
+    return filme
+  }
 }
