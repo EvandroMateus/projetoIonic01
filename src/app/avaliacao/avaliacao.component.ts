@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 
 @Component({
@@ -8,13 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 
-export class AvaliacaoComponent implements OnInit {
+export class AvaliacaoComponent implements OnChanges {
 
     @Input()
     public nota = 0;
     public icones = []
 
-    ngOnInit() {
+    ngOnChanges() {
         /*
         for(let i = 1; i <= this.nota; i++){
             this.icones.push("heart")

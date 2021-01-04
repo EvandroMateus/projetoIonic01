@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 import { SeriesService } from './series.service'
 
 
@@ -12,10 +12,14 @@ export class SeriesAddComponent implements OnInit{
 
     public serie = {}
 
-    constructor(private seriesService: SeriesService, private router: Router){}
+    constructor(private activatedRoute: ActivatedRoute, private seriesService: SeriesService, private router: Router){}
 
     ngOnInit(){
-
+        const id = this.activatedRoute.snapshot.paramMap.get("id")
+        if(id !== null){
+            this.serie = this.seriesService.pegarSeriePorId(id)
+            this.serie.id = id
+        }
     }
 
     vaiFormulario(){

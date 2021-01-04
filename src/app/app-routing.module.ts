@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'series/add',
     component: SeriesAddComponent
+  },
+  {
+    path: 'series/add/:id',
+    component: SeriesAddComponent
   }
 ];
 

@@ -17,10 +17,7 @@ export class SeriesInfoComponent implements OnInit{
 
     ngOnInit(){
         const id = this.activatedRoute.snapshot.paramMap.get("id")
-
-
         this.serie = this.seriesService.pegarSeriePorId(id)
-
     }
 
 }

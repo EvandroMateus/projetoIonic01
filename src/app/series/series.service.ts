@@ -65,7 +65,22 @@ export class SeriesService {
   }
 
   addSerie(serie){
-    this.series.push(serie)
+
+    if(serie.id == null){
+      this.series.push(serie)
+    }else{
+      this.atualizarSerie(serie)
+    }
+
+  }
+
+  atualizarSerie(serie){
+    for(let i=0; i < this.series.length; i++){
+      if(this.series[i].id == serie.id){
+        this.series[i] = serie
+        break
+      }
+    }
   }
 
   removerSerieId(idSerie){
